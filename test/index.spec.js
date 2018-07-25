@@ -1,0 +1,6 @@
+require('./login')
+// require('./product')
+// require('./buyProduct')
+// require('./user_envi')
+// require('./user_envi_small')
+// require('./titlePage')
