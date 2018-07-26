@@ -55,8 +55,8 @@ describe('testing user enironment in small screen', ()=>{
     await page.waitFor(1000)
     let passFilled = await page.evaluate(el => el.getAttribute('value'), await page.$("input[type='password']"))
     expect(passFilled).toMatch('hacktiv8')
-
     await page.keyboard.press('Enter')
+    console.log('fill the email pass')
   },timeout)
 
   it('should pop up sign in success', async ()=> {
@@ -81,6 +81,7 @@ describe('testing user enironment in small screen', ()=>{
     await page.waitForSelector("a[title='image-product']")
     let urlProduct = await page.url()
     expect(urlProduct).toMatch('http://m.hijup.com:8000/en/products/most-popular')
+    console.log('go to popular product')
   },timeout)
 
   it('should in detail product and  click size button', async () => {
@@ -96,6 +97,7 @@ describe('testing user enironment in small screen', ()=>{
     await page.waitFor(1000)
     await page.waitForSelector('#buy-now-button')
     await page.click('#buy-now-button')
+    console.log('in detail product')
   },timeout)
 
   it('should add to cart', async ()=> {
@@ -145,6 +147,7 @@ describe('testing user enironment in small screen', ()=>{
     await page.waitFor(1500)
     await page.waitForSelector('#continue-to-payment-shipping')
     await page.click('#continue-to-payment-shipping')
+    console.log('fill the address form')
   }, timeout)
 
   it('should go to thank you page ', async () => {

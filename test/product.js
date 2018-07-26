@@ -19,7 +19,7 @@ describe('Add to Whislist', () => {
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox'
-        ]
+        ],
       })
 
       page = await browser.newPage()
@@ -27,10 +27,11 @@ describe('Add to Whislist', () => {
       await page.goto(`http://${baseUrl}/en/products`,{
         waitUntil: 'networkidle2'
       })
+      console.log(await page.title(),'-----', baseUrl,'--------', await page.url())
       await page.waitFor(1000)
       await page.waitForSelector('#product-wishlist-button')
       await page.click('#product-wishlist-button')
-      await page.waitFor(2000)
+      await page.waitFor(1000)
       await page.waitForSelector("div[class='s-alert-wrapper']")
       let wishlistAlert = await page.evaluate(el => el.innerHTML, await page.$("div[class='s-alert-wrapper']"))
       await browser.close()
