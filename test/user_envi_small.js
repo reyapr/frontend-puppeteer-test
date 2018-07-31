@@ -12,7 +12,7 @@ const timeout = 150000
 let page;
 let browser;
 
-describe('testing user enironment in small screen', ()=>{
+describe('testing user environment in small screen', ()=>{
   it('should show side bar menu', async ()=> {
     browser = await puppeteer.launch({
       headless:true,

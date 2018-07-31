@@ -130,7 +130,7 @@ describe('User Environment', () => {
 
   it('should choose BCA transfer for payment, and save to order history', async ()=>{
     await page.waitForNavigation()
-    await page.waitFor(2000)
+    await page.waitFor(3000)
     await page.waitForSelector('#bank_transfer')
     await page.click('#bank_transfer')
     await page.waitForSelector('#continue-payment')
