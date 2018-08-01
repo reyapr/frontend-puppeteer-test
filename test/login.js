@@ -45,7 +45,7 @@ describe('User Sign In', ()=> {
     await page.keyboard.down('Control');
     await page.keyboard.press('KeyA');
     await page.keyboard.up('Control');
-    await page.keyboard.type('automated_test@gmail.com')
+    await page.keyboard.type('automated_test1@gmail.com')
     await page.keyboard.press('Enter')
     await page.waitForSelector('#app > div > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(4) > form > fieldset > div:nth-child(2) > p')
     let incorretPass = await page.evaluate(el => el.innerHTML, await page.$('#app > div > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(4) > form > fieldset > div:nth-child(2) > p'))

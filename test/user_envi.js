@@ -13,7 +13,7 @@ describe('User Environment', () => {
   let browser;
   it('should go to login', async()=>{
     browser = await puppeter.launch({
-      headless:false,
+      headless:true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
@@ -44,7 +44,7 @@ describe('User Environment', () => {
 
       await page.waitForSelector("input[type='email']")
       await page.click("input[type='email']")
-      await page.keyboard.type('automated_test@gmail.com');
+      await page.keyboard.type('automated_test1@gmail.com');
       
       await page.click("input[type='password']")
       await page.keyboard.type('hacktiv8');
@@ -119,7 +119,7 @@ describe('User Environment', () => {
     await page.waitFor(1000)
     await page.click('#select-shipping')
     await page.waitFor(1000)
-    await page.click('#Regular')
+    await page.click('#regular')
     await page.waitFor(1500)
     await page.waitForSelector('#continue-to-payment-shipping')
     await page.click('#continue-to-payment-shipping')
@@ -129,8 +129,8 @@ describe('User Environment', () => {
   it('should choose BCA transfer for payment, and save to order history', async ()=>{
     await page.waitForNavigation()
     await page.waitFor(3000)
-    await page.waitForSelector('#bank_transfer')
-    await page.click('#bank_transfer')
+    await page.waitForSelector("input[value='bank_transfer']")
+    await page.click("input[value='bank_transfer']")
     await page.waitForSelector('#continue-payment')
     await page.click('#continue-payment')
     await page.waitForNavigation()

@@ -17,7 +17,7 @@ let paymentConfirmUrl;
 describe('Add to Cart', () => {
     it('should add to cart when buy a product', async ()=>{
       browser = await puppeteer.launch({
-        headless:false,
+        headless:true,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox'
@@ -30,7 +30,7 @@ describe('Add to Cart', () => {
         width:1366, 
         height:768
       })
-      await page.goto(`http://${baseUrl}/en/long-dress/46185-haura-dress`,{
+      await page.goto(`http://${baseUrl}/en/tunic/46688-kinara-blouse`,{
           waitUntil: 'networkidle2'
       })
 
@@ -165,7 +165,7 @@ describe('fill the form in shipment page', ()=>{
     await page.waitFor(1000)
     await page.click('#select-shipping')
     await page.waitFor(1000)
-    await page.click('#Regular')
+    await page.click('#regular')
     await page.waitFor(1500)
     let formChooseShipping = await page.evaluate(el => el.value, await page.$('#select-shipping'))
     console.log(formChooseShipping,'Regular')
@@ -211,8 +211,8 @@ describe('checking payment method', ()=>{
 
   it('should pop up customer support contact', async()=>{
     await page.waitFor(2000)
-    await page.waitForSelector('#bank_transfer')
-    await page.click('#bank_transfer')
+    await page.waitForSelector("input[value='bank_transfer']")
+    await page.click("input[value='bank_transfer']")
     await page.waitFor(1000)
     // await page.click('#contact-customer-support')
     await page.click('#sfe-widget-toggle')
@@ -220,8 +220,9 @@ describe('checking payment method', ()=>{
     console.log(contactCustomerSupport,'test')
 
     await page.waitFor(1000)
-    await page.waitForSelector('#sfe-signup-name')
-    await page.click('#sfe-signup-name')
+    // await page.waitForSelector('#sfe-signup-name')
+    // await page.click('#sfe-signup-name')
+    await page.click('#sfe-offline-name')
     await page.keyboard.type('test test test')
   
     await page.waitForSelector('#sfe-widget__header-subtitle--container')

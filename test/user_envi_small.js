@@ -15,7 +15,7 @@ let browser;
 describe('testing user environment in small screen', ()=>{
   it('should show side bar menu', async ()=> {
     browser = await puppeteer.launch({
-      headless:false,
+      headless:true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
@@ -43,11 +43,11 @@ describe('testing user environment in small screen', ()=>{
   it('should fill the email and password input', async ()=> {
     await page.waitForSelector("input[type='email']")
     await page.click("input[type='email']")
-    await page.keyboard.type('automated_test@gmail.com');
+    await page.keyboard.type('automated_test1@gmail.com');
 
     await page.waitFor(1000)
     let emailFilled = await page.evaluate(el => el.getAttribute('value'), await page.$("input[type='email']"))
-    expect(emailFilled).toMatch('automated_test@gmail.com')
+    expect(emailFilled).toMatch('automated_test1@gmail.com')
 
     await page.click("input[type='password']")
     await page.keyboard.type('hacktiv8');
@@ -143,7 +143,7 @@ describe('testing user environment in small screen', ()=>{
     await page.waitForSelector('#select-shipping')
     await page.click('#select-shipping')
     await page.waitFor(1000)
-    await page.click("label[id='HIJUP Try and Pay - COD by Cash']")
+    await page.click("#hijup-try-and-pay-cod-by-cash")
     await page.waitFor(1500)
     await page.waitForSelector('#continue-to-payment-shipping')
     await page.click('#continue-to-payment-shipping')
