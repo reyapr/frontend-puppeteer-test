@@ -15,7 +15,7 @@ describe('Add to Whislist', () => {
     let browser;
     it('should pop up login alert when click whislist', async ()=>{
       browser = await puppeteer.launch({
-        headless:true,
+        headless:false,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox'

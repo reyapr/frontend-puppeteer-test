@@ -13,7 +13,7 @@ describe('User Environment', () => {
   let browser;
   it('should go to login', async()=>{
     browser = await puppeter.launch({
-      headless:true,
+      headless:false,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
@@ -65,8 +65,6 @@ describe('User Environment', () => {
     //click first Product
     await page.waitForSelector("a[title='image-product']")
     await page.click("a[title='image-product']")
-    // await page.waitForSelector('#app > div > div:nth-child(3) > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(2) > div > div > div:nth-child(1) > a')
-    // await page.click('#app > div > div:nth-child(3) > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(2) > div > div > div:nth-child(1) > a')
     
     //in detail Product Page
     await page.waitForSelector('#buy-now-button')
@@ -141,7 +139,7 @@ describe('User Environment', () => {
     await page.waitForSelector("label[for='bankReceived-confirmation']")
     await page.click("label[for='bankReceived-confirmation']")
     await page.click("label[for='bankReceived-confirmation']")
-    await page.waitFor(3000)
+    await page.waitFor(4000)
     await page.click('#confirmation-payment-now')
     await page.waitForNavigation()
     await page.waitFor(2000)

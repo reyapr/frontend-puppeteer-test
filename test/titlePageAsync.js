@@ -8,18 +8,8 @@ let response
 let groupsPage = []
 
 
-let groupsLength = Math.ceil(pagesTest.length/4)
+let groupsLength = Math.ceil(pagesTest.length/3)
 let count = 0
-// for(let i=0;i<groupsLength;i++){
-//   let group = []
-//   pagesTest.slice(count,count+10).forEach(() => {
-//     group.push(pagesTest[count])
-//     count+=1
-//   })
-//   groupsPage.push(group)
-// }
-// console.log(groupsLength)
-
 
 describe('checking title page', async ()=>{
   it('open the browser', async ()=>{
@@ -34,7 +24,7 @@ describe('checking title page', async ()=>{
 
   for(let i=0;i<groupsLength;i++){
     let group = []
-    pagesTest.slice(count,count+4).forEach(pageTest => {
+    pagesTest.slice(count,count+3).forEach(pageTest => {
       it(`should pass the title page on ${pageTest.url}`,async ()=>{
           group.push(
             browser.newPage().then(async page => {

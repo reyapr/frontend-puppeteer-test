@@ -15,7 +15,7 @@ let browser;
 describe('testing user environment in small screen', ()=>{
   it('should show side bar menu', async ()=> {
     browser = await puppeteer.launch({
-      headless:true,
+      headless:false,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
@@ -124,7 +124,7 @@ describe('testing user environment in small screen', ()=>{
     await page.waitForSelector("label[for='province-shipping']")
     await page.click("label[for='province-shipping']")
     await page.waitFor(1000)
-    await page.click("li[id='DKI Jakarta']")
+    await page.click("li[id='dki-jakarta']")
     await page.waitFor(1000)
     await page.waitForSelector("label[for='city-shipping']")
     await page.click("label[for='city-shipping']")
