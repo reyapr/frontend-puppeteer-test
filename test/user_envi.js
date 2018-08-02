@@ -7,13 +7,14 @@ nconf.argv()
   file:'.env'
 })
 let baseUrl = nconf.get('BASE_URL')
+let email = nconf.get('EMAIL')
 
 describe('User Environment', () => {
   let page;
   let browser;
   it('should go to login', async()=>{
     browser = await puppeter.launch({
-      headless:true,
+      headless:false,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
@@ -44,7 +45,7 @@ describe('User Environment', () => {
 
       await page.waitForSelector("input[type='email']")
       await page.click("input[type='email']")
-      await page.keyboard.type('automated_test1@gmail.com');
+      await page.keyboard.type(email);
       
       await page.click("input[type='password']")
       await page.keyboard.type('hacktiv8');

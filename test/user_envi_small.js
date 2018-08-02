@@ -7,6 +7,7 @@ nconf.argv()
   file:'.env'
 })
 let baseUrl = nconf.get('BASE_URL')
+let email = nconf.get('EMAIL')
 
 const timeout = 150000
 let page;
@@ -15,7 +16,7 @@ let browser;
 describe('testing user environment in small screen', ()=>{
   it('should show side bar menu', async ()=> {
     browser = await puppeteer.launch({
-      headless:true,
+      headless:false,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
@@ -43,11 +44,11 @@ describe('testing user environment in small screen', ()=>{
   it('should fill the email and password input', async ()=> {
     await page.waitForSelector("input[type='email']")
     await page.click("input[type='email']")
-    await page.keyboard.type('automated_test1@gmail.com');
+    await page.keyboard.type(email);
 
     await page.waitFor(1000)
     let emailFilled = await page.evaluate(el => el.getAttribute('value'), await page.$("input[type='email']"))
-    expect(emailFilled).toMatch('automated_test1@gmail.com')
+    expect(emailFilled).toMatch(email)
 
     await page.click("input[type='password']")
     await page.keyboard.type('hacktiv8');
@@ -109,7 +110,7 @@ describe('testing user environment in small screen', ()=>{
     expect(Number(totalCart)).toBeGreaterThan(0)
     await page.click("a[title='See your shopping bag']")
 
-    await page.waitFor(2000)
+    await page.waitFor(3000)
     await page.waitForSelector("#continue-to-payment")
     await page.click("#continue-to-payment")
   },timeout)

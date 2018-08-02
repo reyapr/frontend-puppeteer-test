@@ -1,3 +1,4 @@
+// require('./register')
 require('./login')
 require('./facebookLogin')
 require('./product')

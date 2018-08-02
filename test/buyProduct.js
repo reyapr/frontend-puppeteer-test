@@ -30,7 +30,7 @@ describe('Add to Cart', () => {
         width:1366, 
         height:768
       })
-      await page.goto(`http://${baseUrl}/en/tunic/46688-kinara-blouse`,{
+      await page.goto(`http://${baseUrl}/en/tunic/46690-minty-blouse`,{
           waitUntil: 'networkidle2'
       })
 
