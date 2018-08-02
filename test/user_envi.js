@@ -14,7 +14,7 @@ describe('User Environment', () => {
   let browser;
   it('should go to login', async()=>{
     browser = await puppeter.launch({
-      headless:false,
+      headless:true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'

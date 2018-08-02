@@ -15,7 +15,7 @@ describe('User Register', ()=> {
   let page;
   it('should show show email is not valid', async ()=>{
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -40,10 +40,12 @@ describe('User Register', ()=> {
     await page.click("label[data-shrink='false']")
     await page.keyboard.type('hacktiv8')
     await page.keyboard.press('Enter')
+    await page.waitFor(2000)
     await page.waitForSelector("div[class='s-alert-wrapper']")
     let succesRegisterAlert = await page.evaluate(el => el.innerHTML, await page.$("div[class='s-alert-wrapper']"))
     console.log(succesRegisterAlert,'registered')
-    await page.close()
+    expect(succesRegisterAlert).toMatch('registered')
+    await browser.close()
   },timeout)
 
 },timeout)

@@ -16,7 +16,7 @@ let browser;
 describe('testing user environment in small screen', ()=>{
   it('should show side bar menu', async ()=> {
     browser = await puppeteer.launch({
-      headless:false,
+      headless:true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
