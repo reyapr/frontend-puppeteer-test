@@ -14,7 +14,7 @@ describe('User Sign In', ()=> {
   let page;
   it('should show show email is not valid', async ()=>{
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',

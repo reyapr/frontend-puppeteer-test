@@ -214,15 +214,14 @@ describe('checking payment method', ()=>{
     await page.waitForSelector("input[value='bank_transfer']")
     await page.click("input[value='bank_transfer']")
     await page.waitFor(1000)
-    // await page.click('#contact-customer-support')
     await page.click('#sfe-widget-toggle')
     let contactCustomerSupport = await page.evaluate(el=> el.innerHTML, await page.$('#sfe-widget-toggle'))
     console.log(contactCustomerSupport,'test')
 
     await page.waitFor(1000)
-    // await page.waitForSelector('#sfe-signup-name')
-    // await page.click('#sfe-signup-name')
-    await page.click('#sfe-offline-name')
+    await page.waitForSelector('#sfe-signup-name')
+    await page.click('#sfe-signup-name')
+    // await page.click('#sfe-offline-name')
     await page.keyboard.type('test test test')
   
     await page.waitForSelector('#sfe-widget__header-subtitle--container')
