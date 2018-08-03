@@ -33,6 +33,7 @@ describe('Add to Whislist', () => {
       await page.click('#product-wishlist-button')
       await page.waitFor(1000)
       await page.waitForSelector("div[class='s-alert-wrapper']")
+      await page.waitFor(1000)
       let wishlistAlert = await page.evaluate(el => el.innerHTML, await page.$("div[class='s-alert-wrapper']"))
       await browser.close()
       expect(wishlistAlert).toMatch('logged')

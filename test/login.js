@@ -13,15 +13,13 @@ const timeout = 30000
 describe('User Sign In', ()=> { 
   let browser;
   let page;
-  it('should show show email is not valid', async ()=>{
+  it('should show email is not valid', async ()=>{
+    console.log(baseUrl,email,'in base url sama email')
     browser = await puppeteer.launch({
       headless: true,
       args: [
         '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage'
       ],
-      
     });
  
     page = await browser.newPage();
@@ -35,6 +33,9 @@ describe('User Sign In', ()=> {
     await page.click("input[type='password']")
     await page.keyboard.type('asdasdada')
     await page.keyboard.press('Enter')
+    // let isi = await page.evaluate(el => el.innerHTML, await page.$("input[type='email']"))
+    // console.log(isi)
+
     await page.waitForSelector('#app > div > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(4) > form > fieldset > div:nth-child(1) > p')
     let emailNotValid = await page.evaluate(el => el.innerHTML, await page.$('#app > div > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(4) > form > fieldset > div:nth-child(1) > p'))
     expect(emailNotValid).toMatch('Email address is not valid.')
