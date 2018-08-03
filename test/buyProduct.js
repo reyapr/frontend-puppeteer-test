@@ -31,8 +31,11 @@ describe('Add to Cart', () => {
         height:768
       })
       await page.goto(`http://${baseUrl}/en/products`,{
-          waitUntil: 'networkidle2'
+          waitUntil: 'networkidle2',
+          waitUntil: 'load'
       })
+      console.log(page.url())
+      console.log(await page.title())
       await page.waitForSelector("a[title='image-product']")
       await page.click("a[title='image-product']")
 
@@ -41,13 +44,13 @@ describe('Add to Cart', () => {
 
       await page.waitForSelector('#buy-now-button')
       await page.click('#buy-now-button')
-
+      console.log(page.url())
       await page.waitForSelector('#app > div > div:nth-child(2) > header > div > div.header-primary > div > div.shrink.column.user-menu > div > div:nth-child(3) > div > a > span > span')
       let totalCart = await page.evaluate(el=> el.innerHTML, await page.$('#app > div > div:nth-child(2) > header > div > div.header-primary > div > div.shrink.column.user-menu > div > div:nth-child(3) > div > a > span > span'))
       console.log(totalCart)
       expect(Number(totalCart)).toBeGreaterThan(0)
-      page.close()
-    },100000)
+      await page.close()
+    },200000)
 
 },timeout)
 

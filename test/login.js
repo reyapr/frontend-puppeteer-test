@@ -33,8 +33,6 @@ describe('User Sign In', ()=> {
     await page.click("input[type='password']")
     await page.keyboard.type('asdasdada')
     await page.keyboard.press('Enter')
-    // let isi = await page.evaluate(el => el.innerHTML, await page.$("input[type='email']"))
-    // console.log(isi)
 
     await page.waitForSelector('#app > div > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(4) > form > fieldset > div:nth-child(1) > p')
     let emailNotValid = await page.evaluate(el => el.innerHTML, await page.$('#app > div > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(4) > form > fieldset > div:nth-child(1) > p'))

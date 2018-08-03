@@ -34,6 +34,6 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 
 USER pptruser
 
-ENTRYPOINT ["npm"]
+ENTRYPOINT ["dumb-init", "--", "npm"]
 
 CMD ["run", "test"]
