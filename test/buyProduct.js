@@ -17,7 +17,7 @@ let paymentConfirmUrl;
 describe('Add to Cart', () => {
     it('should add to cart when buy a product', async ()=>{
       browser = await puppeteer.launch({
-        headless:true,
+        headless:false,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox'
@@ -30,9 +30,14 @@ describe('Add to Cart', () => {
         width:1366, 
         height:768
       })
-      await page.goto(`http://${baseUrl}/en/tunic/46690-minty-blouse`,{
+      await page.goto(`http://${baseUrl}/en/products`,{
           waitUntil: 'networkidle2'
       })
+      await page.waitForSelector("a[title='image-product']")
+      await page.click("a[title='image-product']")
+
+      await page.waitForSelector("button[name='size-button']")
+      await page.click("button[name='size-button']")
 
       await page.waitForSelector('#buy-now-button')
       await page.click('#buy-now-button')
