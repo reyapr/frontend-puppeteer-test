@@ -17,7 +17,7 @@ let paymentConfirmUrl;
 describe('Add to Cart', () => {
     it('should add to cart when buy a product', async ()=>{
       browser = await puppeteer.launch({
-        headless:true,
+        headless:false,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox'

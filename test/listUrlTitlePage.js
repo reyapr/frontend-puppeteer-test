@@ -15,6 +15,70 @@ module.exports ={
       title:'Modest Fashion Worldwide | HIJUP'
     },
     {
+      url:`https://${baseUrl}/en/notification`,
+      title:'Toko Online Busana & Baju Muslim Wanita Terbaru | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/return_exchange`,
+      title:'Pengembalian dan Penukaran Barang | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/help_center`,
+      title:'Pusat Bantuan | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/about`,
+      title:'Tentang Kami | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/presses`,
+      title:'Siaran Pers | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/policy`,
+      title:'Kebijakan Perusahaan | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/careers`,
+      title:'Form Lowongan Pekerjaan | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/contact_messages/new`,
+      title:'Kontak kami | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/payment_guide`,
+      title:'Panduan Pembayaran | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/hijup_point`,
+      title:'Hijup Point | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/international_shipping`,
+      title:'Pengiriman International | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/faqs`,
+      title:'FAQ | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/size_guide`,
+      title:'Panduan Ukuran | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/pages/fabric_guide`,
+      title:'Panduan Material | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/lp/warehousestore`,
+      title:'Warehouse Store | HIJUP'
+    },
+    {
+      url:`https://${baseUrl}/en/lp/partnership-store`,
+      title:'Partnership Store | HIJUP'
+    },
+    {
       url:`https://${baseUrl}/en/sign_in`,
       title:'Sign In | HIJUP'
     },
@@ -78,11 +142,6 @@ module.exports ={
       url:`https://${baseUrl}/en/hamidah`,
       title:`HIJUP x Hamidah's Blouse, Outer, and Women Pants New Collections | HIJUP`
     },
-
-
-
-    
-   
     {
       url:`https://${baseUrl}/en/hijupherfiza`,
       title:`HIJUP x Herfiza's Blouse, Outer, and Women Pants New Collections | HIJUP`
@@ -111,19 +170,6 @@ module.exports ={
       url:`https://${baseUrl}/en/hsj`,
       title:`HIJUP X SEJIWA's' Square Hijab & Square Hijab Collections Online | HIJUP`
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
       url:`https://${baseUrl}/en/allura`,
       title:`ALLURA's' Square Hijab, Pashmina & Square Hijab Collections Online | HIJUP`
@@ -149,18 +195,6 @@ module.exports ={
       title:`Women's Socks Collections | HIJUP`
     },
     {
-      url:`https://${baseUrl}/en/categories/instan-shawl`,
-      title:`Women's Instan Shawl Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/khimar`,
-      title:`Women's Khimar Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/pashmina`,
-      title:`Women's Pashmina Collections | HIJUP`
-    },
-    {
       url:`https://${baseUrl}/en/categories/square-hijab`,
       title:`Women's Square Hijab Collections | HIJUP`
     },
@@ -169,36 +203,12 @@ module.exports ={
       title:`Women's Clothing Collections | HIJUP`
     },
     {
-      url:`https://${baseUrl}/en/categories/sport`,
-      title:`Women's Sport Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/breast-feeding`,
-      title:`Women's Breast Feeding Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/praying-set`,
-      title:`Praying Set Collections | HIJUP`
-    },
-    {
       url:`https://${baseUrl}/en/categories/top`,
       title:`Women's Top Collections | HIJUP`
     },
     {
       url:`https://${baseUrl}/en/categories/outwear`,
       title:`Women's Outwear Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/bottom`,
-      title:`Women's Bottom Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/dress`,
-      title:`Women's Dress Collections | HIJUP`
-    },
-    {
-      url:`https://${baseUrl}/en/categories/bath-and-body`,
-      title:`Women's Bath and Body Collections | HIJUP`
     },
     {
       url:`https://${baseUrl}/en/categories/hair-care`,
